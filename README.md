@@ -1,4 +1,4 @@
-# Watch out for bikes
+![WOFB](imgs/logo-WOFB.svg)
 
 Repository for DEEP engineer project.
 
