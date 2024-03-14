@@ -1,4 +1,4 @@
-![WOFB](imgs/WOFB-banner.svg)
+![WOFB](imgs/eseOledLogo.svg)
 
 
 ## Installation
