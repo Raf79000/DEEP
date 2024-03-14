@@ -1,4 +1,4 @@
-![WOFB](imgs/logo-WOFB.svg)
+![WOFB](imgs/WOFB-banner.svg)
 
 Repository for DEEP engineer project.
 
