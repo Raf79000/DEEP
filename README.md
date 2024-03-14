@@ -2,8 +2,6 @@
 
 Repository for DEEP engineer project.
 
-Why 
-
 ## Installation
 
 Work in progress 🚧
