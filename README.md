@@ -1,6 +1,5 @@
 ![WOFB](imgs/WOFB-banner.svg)
 
-Repository for DEEP engineer project.
 
 ## Installation
 
