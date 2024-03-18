@@ -7,11 +7,13 @@
 #include "stm32f1xx_hal.h"
 #include "macro_types.h"
 #include "stm32f103xb.h"
+#include "HC-SR04/HCSR04.h"
 
 #define PERIOD_MEASURE			100
+#define NB_MEASURES				10
 
 
-void HCSRO4_mesures(void)
+uint16_t HCSRO4_mesures(void)
 {
 	typedef enum
 	{
@@ -21,7 +23,7 @@ void HCSRO4_mesures(void)
 		RUN,
 		WAIT_DURING_MEASURE,
 		WAIT_BEFORE_NEXT_MEASURE
-	}state_e;
+	} state_e;
 
 	static state_e state = INIT;
 	static uint32_t tlocal;

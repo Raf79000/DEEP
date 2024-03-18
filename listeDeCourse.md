@@ -3,5 +3,5 @@
 - [ ] LED CMS 1206
 - [ ] une photorésistances
 - [x] micro servo
-- [~] télémètres ultrasons HC-SR04 x2
+- [~] télémètres ultrasons HC-SR04 x3
 - [ ] CONNECTEUR STANDARD CARTE MEMOIRE SD DM1AA-SF-PEJ

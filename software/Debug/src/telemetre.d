@@ -1,4 +1,4 @@
-src/main.o: ../src/main.c ../lib/hal/inc/stm32f1xx_hal.h \
+src/telemetre.o: ../src/telemetre.c ../lib/hal/inc/stm32f1xx_hal.h \
  ../lib/hal/inc/stm32f1xx_hal_conf.h ../lib/hal/inc/stm32f1xx_hal_rcc.h \
  ../lib/hal/inc/stm32f1xx_hal_def.h ../lib/CMSIS/device/stm32f1xx.h \
  ../lib/CMSIS/device/stm32f103xb.h ../lib/CMSIS/core/core_cm3.h \
@@ -22,13 +22,9 @@ src/main.o: ../src/main.c ../lib/hal/inc/stm32f1xx_hal.h \
  ../lib/hal/inc/stm32f1xx_hal_uart.h ../lib/hal/inc/stm32f1xx_hal_usart.h \
  ../lib/hal/inc/stm32f1xx_hal_wwdg.h ../lib/hal/inc/stm32f1xx_hal_pcd.h \
  ../lib/hal/inc/stm32f1xx_ll_usb.h ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
- ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/stm32f1_uart.h \
- ../lib/bsp/macro_types.h \
- /Users/cahierdevacances/Library/CloudStorage/OneDrive-ESEO/S6/Elec\ Numerique/DEEP/software/include/config.h \
- ../lib/bsp/stm32f1_sys.h ../lib/bsp/stm32f1_uart.h \
- ../lib/bsp/stm32f1_gpio.h ../lib/bsp/macro_types.h ../lib/bsp/systick.h \
- /Users/cahierdevacances/Library/CloudStorage/OneDrive-ESEO/S6/Elec\ Numerique/DEEP/software/include/telemetre.h \
- ../lib/bsp/HC-SR04/HCSR04.h
+ ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/macro_types.h \
+ ../lib/bsp/HC-SR04/HCSR04.h \
+ /Users/cahierdevacances/Library/CloudStorage/OneDrive-ESEO/S6/Elec\ Numerique/DEEP/software/include/config.h
 
 ../lib/hal/inc/stm32f1xx_hal.h:
 
@@ -116,22 +112,8 @@ src/main.o: ../src/main.c ../lib/hal/inc/stm32f1xx_hal.h \
 
 ../lib/hal/inc/stm32f1xx_hal_hcd.h:
 
-../lib/bsp/stm32f1_uart.h:
-
 ../lib/bsp/macro_types.h:
-
-/Users/cahierdevacances/Library/CloudStorage/OneDrive-ESEO/S6/Elec\ Numerique/DEEP/software/include/config.h:
-
-../lib/bsp/stm32f1_sys.h:
-
-../lib/bsp/stm32f1_uart.h:
-
-../lib/bsp/stm32f1_gpio.h:
-
-../lib/bsp/macro_types.h:
-
-../lib/bsp/systick.h:
-
-/Users/cahierdevacances/Library/CloudStorage/OneDrive-ESEO/S6/Elec\ Numerique/DEEP/software/include/telemetre.h:
 
 ../lib/bsp/HC-SR04/HCSR04.h:
+
+/Users/cahierdevacances/Library/CloudStorage/OneDrive-ESEO/S6/Elec\ Numerique/DEEP/software/include/config.h:
