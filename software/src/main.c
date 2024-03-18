@@ -12,6 +12,7 @@
 #include "stm32f1_gpio.h"
 #include "macro_types.h"
 #include "systick.h"
+#include "telemetre.h"
 
 #include "stm32f103xb.h"
 #include "HC-SR04/HCSR04.h" // on évite les warnings dégeulasses
@@ -29,6 +30,8 @@ void UART_full_init(void){
 
 int main(void)
 {
+
+	// uint16_t distance;
 	//Initialisation de la couche logicielle HAL (Hardware Abstraction Layer)
 	//Cette ligne doit rester la premi�re �tape de la fonction main().
 	HAL_Init();
@@ -38,8 +41,7 @@ int main(void)
 
 	while (1)
 	{
-		HCSR04_demo_state_machine();
+		HCSRO4_mesures();
 	}
 	
-
 }
