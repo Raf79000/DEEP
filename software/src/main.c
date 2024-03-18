@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
   * @file    main.c
-  * @author  Nirgal
-  * @date    03-July-2019
+  * @author  CahierDeVac
+  * @date    18-march-2024
   * @brief   Default main function.
   ******************************************************************************
 */
@@ -13,53 +13,33 @@
 #include "macro_types.h"
 #include "systick.h"
 
-void writeLED(bool_e b)
-{
-	HAL_GPIO_WritePin(LED_GREEN_GPIO, LED_GREEN_PIN, b);
-}
+#include "stm32f103xb.h"
+#include "HC-SR04/HCSR04.h" // on Ã©vite les warnings dÃ©geulasses
 
-bool_e readButton(void)
-{
-	return !HAL_GPIO_ReadPin(BLUE_BUTTON_GPIO, BLUE_BUTTON_PIN);
-}
 
-static volatile uint32_t t = 0;
-void process_ms(void)
-{
-	if(t)
-		t--;
-}
+void UART_full_init(void){
+	//Initialisation de l'UART2 ï¿½ la vitesse de 115200 bauds/secondes (92kbits/s) PA2 : Tx  | PA3 : Rx.
+		//Attention, les pins PA2 et PA3 ne sont pas reliï¿½es jusqu'au connecteur de la Nucleo.
+		//Ces broches sont redirigï¿½es vers la sonde de dï¿½bogage, la liaison UART ï¿½tant ensuite encapsulï¿½e sur l'USB vers le PC de dï¿½veloppement.
+	UART_init(UART2_ID,115200);
 
+	//"Indique que les printf sortent vers le pï¿½riphï¿½rique UART2."
+	SYS_set_std_usart(UART2_ID, UART2_ID, UART2_ID);
+};
 
 int main(void)
 {
 	//Initialisation de la couche logicielle HAL (Hardware Abstraction Layer)
-	//Cette ligne doit rester la première étape de la fonction main().
+	//Cette ligne doit rester la premiï¿½re ï¿½tape de la fonction main().
 	HAL_Init();
 
-	//Initialisation de l'UART2 à la vitesse de 115200 bauds/secondes (92kbits/s) PA2 : Tx  | PA3 : Rx.
-		//Attention, les pins PA2 et PA3 ne sont pas reliées jusqu'au connecteur de la Nucleo.
-		//Ces broches sont redirigées vers la sonde de débogage, la liaison UART étant ensuite encapsulée sur l'USB vers le PC de développement.
-	UART_init(UART2_ID,115200);
+	//Initialisation du de l'interfaÃ§age UART.
+	UART_full_init();
 
-	//"Indique que les printf sortent vers le périphérique UART2."
-	SYS_set_std_usart(UART2_ID, UART2_ID, UART2_ID);
-
-	//Initialisation du port de la led Verte (carte Nucleo)
-	BSP_GPIO_PinCfg(LED_GREEN_GPIO, LED_GREEN_PIN, GPIO_MODE_OUTPUT_PP,GPIO_NOPULL,GPIO_SPEED_FREQ_HIGH);
-
-	//Initialisation du port du bouton bleu (carte Nucleo)
-	BSP_GPIO_PinCfg(BLUE_BUTTON_GPIO, BLUE_BUTTON_PIN, GPIO_MODE_INPUT,GPIO_PULLUP,GPIO_SPEED_FREQ_HIGH);
-
-	//On ajoute la fonction process_ms à la liste des fonctions appelées automatiquement chaque ms par la routine d'interruption du périphérique SYSTICK
-	Systick_add_callback_function(&process_ms);
-
-	while(1)	//boucle de tâche de fond
+	while (1)
 	{
-		if(!t)
-		{
-			t = 200;
-			HAL_GPIO_TogglePin(LED_GREEN_GPIO, LED_GREEN_PIN);
-		}
+		HCSR04_demo_state_machine();
 	}
+	
+
 }
