@@ -88,7 +88,7 @@
 	#define USE_AN17		1	//Vref
 
 
-#define USE_SCREEN_TFT_ILI9341		0	//Ecran TFT 2.4
+#define USE_SCREEN_TFT_ILI9341		1	//Ecran TFT 2.4
 	#if USE_SCREEN_TFT_ILI9341
 		#define USE_XPT2046			1	//Tactile
 
