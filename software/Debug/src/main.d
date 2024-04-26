@@ -27,11 +27,11 @@ src/main.o: ../src/main.c ../lib/hal/inc/stm32f1xx_hal.h \
  C:/Users/0302331W/Documents/DEEP/software/include/config.h \
  ../lib/bsp/stm32f1_sys.h ../lib/bsp/stm32f1_uart.h \
  ../lib/bsp/stm32f1_gpio.h ../lib/bsp/macro_types.h ../lib/bsp/systick.h \
- C:/Users/0302331W/Documents/DEEP/software/include/telemetre.h \
  ../lib/bsp/stm32f1_rtc.h \
  C:/Users/0302331W/Documents/DEEP/software/include/time.h \
- ../lib/hal/inc/stm32f1xx_hal_rtc.h ../lib/bsp/HC-SR04/HCSR04.h \
- ../lib/bsp/stm32f1_adc.h \
+ ../lib/hal/inc/stm32f1xx_hal_rtc.h \
+ C:/Users/0302331W/Documents/DEEP/software/include/telemetre.h \
+ ../lib/bsp/HC-SR04/HCSR04.h ../lib/bsp/stm32f1_adc.h \
  C:/Users/0302331W/Documents/DEEP/software/include/servo.h \
  C:/Users/0302331W/Documents/DEEP/software/include/set_servo.h
 ../lib/hal/inc/stm32f1xx_hal.h:
@@ -85,10 +85,10 @@ C:/Users/0302331W/Documents/DEEP/software/include/config.h:
 ../lib/bsp/stm32f1_gpio.h:
 ../lib/bsp/macro_types.h:
 ../lib/bsp/systick.h:
-C:/Users/0302331W/Documents/DEEP/software/include/telemetre.h:
 ../lib/bsp/stm32f1_rtc.h:
 C:/Users/0302331W/Documents/DEEP/software/include/time.h:
 ../lib/hal/inc/stm32f1xx_hal_rtc.h:
+C:/Users/0302331W/Documents/DEEP/software/include/telemetre.h:
 ../lib/bsp/HC-SR04/HCSR04.h:
 ../lib/bsp/stm32f1_adc.h:
 C:/Users/0302331W/Documents/DEEP/software/include/servo.h:

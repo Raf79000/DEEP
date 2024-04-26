@@ -13,7 +13,7 @@
 #define NB_MEASURES				10
 
 
-uint16_t HCSRO4_mesures(GPIO_TypeDef * TRIG_GPIO, uint16_t TRIG_PIN, GPIO_TypeDef * ECHO_GPIO, uint16_t ECHO_PIN)
+void HCSRO4_mesures(GPIO_TypeDef * TRIG_GPIO, uint16_t TRIG_PIN, GPIO_TypeDef * ECHO_GPIO, uint16_t ECHO_PIN)
 {
 	typedef enum
 	{
@@ -37,7 +37,7 @@ uint16_t HCSRO4_mesures(GPIO_TypeDef * TRIG_GPIO, uint16_t TRIG_PIN, GPIO_TypeDe
 	switch(state)
 	{
 		case INIT:
-			if(HCSR04_add(&id_sensor, &TRIG_GPIO, TRIG_PIN, &ECHO_GPIO, ECHO_PIN) != HAL_OK)
+			if(HCSR04_add(&id_sensor, TRIG_GPIO, TRIG_PIN, ECHO_GPIO, ECHO_PIN) != HAL_OK)
 			{
 				printf("HCSR04 non ajout� - erreur g�nante\n");
 				state = FAIL;

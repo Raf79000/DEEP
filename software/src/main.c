@@ -14,12 +14,12 @@
 #include "macro_types.h"
 #include "systick.h"
 
-// Project libs
-#include "telemetre.h"
+// RTC libs
 #include "stm32f1_rtc.h"
 #include "time.h"
 
 // HC-SR04 télemètre ultrasons
+#include "telemetre.h"
 #include "stm32f103xb.h"
 #include "HC-SR04/HCSR04.h" // on évite les warnings dégeulasses
 
@@ -66,7 +66,6 @@ int main(void)
 	SERVO_init();
 	Led_value = 0;
 	ADC_init();
-//	RTC_init(FALSE);
 
 	// RTC Init
 	RTC_init(FALSE);
@@ -74,8 +73,10 @@ int main(void)
 	{
 //		HCSR04_process_main();
 		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
-		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
-		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+//		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+//		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+		DEMO_RTC_process_main(FALSE);
+
 	}
 	
 }
