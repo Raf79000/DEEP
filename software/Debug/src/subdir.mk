@@ -5,16 +5,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/clock.c \
 ../src/data.c \
 ../src/main.c \
 ../src/telemetre.c 
 
 OBJS += \
+./src/clock.o \
 ./src/data.o \
 ./src/main.o \
 ./src/telemetre.o 
 
 C_DEPS += \
+./src/clock.d \
 ./src/data.d \
 ./src/main.d \
 ./src/telemetre.d 
@@ -27,7 +30,7 @@ src/%.o src/%.su src/%.cyclo: ../src/%.c src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/data.cyclo ./src/data.d ./src/data.o ./src/data.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su ./src/telemetre.cyclo ./src/telemetre.d ./src/telemetre.o ./src/telemetre.su
+	-$(RM) ./src/clock.cyclo ./src/clock.d ./src/clock.o ./src/clock.su ./src/data.cyclo ./src/data.d ./src/data.o ./src/data.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su ./src/telemetre.cyclo ./src/telemetre.d ./src/telemetre.o ./src/telemetre.su
 
 .PHONY: clean-src
 

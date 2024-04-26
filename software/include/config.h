@@ -143,7 +143,7 @@
 	#define STEPPER_DRIVER_TB6600_IS_DRIVEN_BY_OPENDRAIN_OUTPUTS	0	//l'un des deux modes au choix !
 	#define STEPPER_DRIVER_TB6600_IS_DRIVEN_BY_MOSFET				1	//l'un des deux modes au choix !
 
-#define USE_RTC					0
+#define USE_RTC					1
 #define USE_ESP8266				0//Module Wifi
 #define USE_NFC03A1				0
 #define USE_EPAPER				0

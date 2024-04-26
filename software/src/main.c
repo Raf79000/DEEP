@@ -6,14 +6,20 @@
   * @brief   Default main function.
   ******************************************************************************
 */
+// Imports de base
 #include "stm32f1xx_hal.h"
 #include "stm32f1_uart.h"
 #include "stm32f1_sys.h"
 #include "stm32f1_gpio.h"
 #include "macro_types.h"
 #include "systick.h"
-#include "telemetre.h"
 
+// Project libs
+#include "telemetre.h"
+#include "stm32f1_rtc.h"
+#include "time.h"
+
+// Nécessaires pour les télémetres ultrasons
 #include "stm32f103xb.h"
 #include "HC-SR04/HCSR04.h" // on évite les warnings dégeulasses
 
@@ -39,12 +45,16 @@ int main(void)
 	//Initialisation du de l'interfaçage UART.
 	UART_full_init();
 
+	// RTC Init
+	RTC_init(FALSE);
 	while (1)
 	{
 //		HCSR04_process_main();
-		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
-		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
-		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+//		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+//		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+//		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+		DEMO_RTC_process_main(FALSE);
+
 	}
 	
 }

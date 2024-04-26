@@ -193,6 +193,7 @@
 "./lib/middleware/dialog.o"
 "./lib/middleware/fft/fft.o"
 "./lib/startup_stm32f103xb.o"
+"./src/clock.o"
 "./src/data.o"
 "./src/main.o"
 "./src/telemetre.o"
