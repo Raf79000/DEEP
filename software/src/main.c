@@ -41,7 +41,10 @@ int main(void)
 
 	while (1)
 	{
-		HCSRO4_mesures();
+//		HCSR04_process_main();
+		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
+		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
 	}
 	
 }
