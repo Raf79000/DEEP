@@ -1,0 +1,3 @@
+../src/servo.c:15:6:SERVO_process_test	16	static
+../src/servo.c:31:6:SERVO_init	16	static
+../src/servo.c:40:6:SERVO_set_position	16	static

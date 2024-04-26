@@ -14,8 +14,20 @@
 #include "systick.h"
 #include "telemetre.h"
 
+// HC-SR04 télemètre ultrasons
 #include "stm32f103xb.h"
 #include "HC-SR04/HCSR04.h" // on évite les warnings dégeulasses
+
+// SG90 servo
+#include "stm32f1_adc.h"
+#include "servo.h"
+#include "set_servo.h"
+
+// Servo init vars
+#define Left_US        30
+#define Middle_US    50
+#define Right_US    70
+uint16_t Led_value;
 
 
 void UART_full_init(void){
@@ -39,6 +51,12 @@ int main(void)
 	//Initialisation du de l'interfaçage UART.
 	UART_full_init();
 
+	// Servo init
+	SERVO_init();
+	Led_value = 0;
+	ADC_init();
+//	RTC_init(FALSE);
+
 	while (1)
 	{
 //		HCSR04_process_main();
@@ -47,4 +65,36 @@ int main(void)
 		HCSRO4_mesures(GPIOC, GPIO_PIN_7, GPIOB, GPIO_PIN_6);
 	}
 	
+}
+
+static void state_machine(void){
+    typedef enum
+    {
+        INIT,
+        DAY,
+        NIGHT,
+        TIME
+    }state_e;
+    static state_e state = INIT;
+    static state_e previous_state = INIT;
+    previous_state = state;
+    switch(state){
+        case INIT:
+            //todo en f° de la photodiode passer en etat nuit ou jour
+            if (Led_value > 100){
+                state = DAY;
+            }else{
+                state = NIGHT;
+            }
+            break;
+        case DAY:
+            //todo eteindre la led et mettre la stm en mode veille
+
+            break;
+        case NIGHT:
+            //todo get position
+            //todo put servo in position
+            //todo
+    }
+
 }
