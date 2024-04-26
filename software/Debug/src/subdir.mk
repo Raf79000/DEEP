@@ -7,16 +7,22 @@
 C_SRCS += \
 ../src/data.c \
 ../src/main.c \
+../src/servo.c \
+../src/set_servo.c \
 ../src/telemetre.c 
 
 OBJS += \
 ./src/data.o \
 ./src/main.o \
+./src/servo.o \
+./src/set_servo.o \
 ./src/telemetre.o 
 
 C_DEPS += \
 ./src/data.d \
 ./src/main.d \
+./src/servo.d \
+./src/set_servo.d \
 ./src/telemetre.d 
 
 
@@ -27,7 +33,7 @@ src/%.o src/%.su src/%.cyclo: ../src/%.c src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/data.cyclo ./src/data.d ./src/data.o ./src/data.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su ./src/telemetre.cyclo ./src/telemetre.d ./src/telemetre.o ./src/telemetre.su
+	-$(RM) ./src/data.cyclo ./src/data.d ./src/data.o ./src/data.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su ./src/servo.cyclo ./src/servo.d ./src/servo.o ./src/servo.su ./src/set_servo.cyclo ./src/set_servo.d ./src/set_servo.o ./src/set_servo.su ./src/telemetre.cyclo ./src/telemetre.d ./src/telemetre.o ./src/telemetre.su
 
 .PHONY: clean-src
 
