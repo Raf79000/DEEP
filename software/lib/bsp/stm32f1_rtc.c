@@ -1,7 +1,7 @@
 /*
  * stm32f1_rtc.c
  *
- *  Created on: 21 août 2015
+ *  Created on: 21 aoï¿½t 2015
  *      Author: Nirgal
  */
 #include "config.h"
@@ -9,9 +9,12 @@
 #include "stm32f1_rtc.h"
 #include "stm32f1_uart.h"
 
+// Added libs
+#include "time.h"
+
 //______________________________________________
 
-/**	running_e DEMO_RTC_process_main(void)	 // Fonction de démonstration (partielle) de l'utilisation de ce module.
+/**	running_e DEMO_RTC_process_main(void)	 // Fonction de dï¿½monstration (partielle) de l'utilisation de ce module.
  * @brief exemple d'utilisation du module RTC.
  */
 running_e DEMO_RTC_process_main(bool_e ask_for_finish)
@@ -31,13 +34,13 @@ running_e DEMO_RTC_process_main(bool_e ask_for_finish)
 	{
 		case INIT: {
 			state = RUN;
-			//RTC_init(FALSE);	//Oscillateur INTERNE, imprécis, mais testable sans ajout d'un oscillateur sur PC14 et PC15 !
-			RTC_init(TRUE);		//Oscillateur EXTERNE, précis, mais nécessite l'ajout d'un oscillateur sur PC14 et PC15 !
+//			RTC_init(FALSE);	//Oscillateur INTERNE, imprï¿½cis, mais testable sans ajout d'un oscillateur sur PC14 et PC15 !
+//			RTC_init(TRUE);		//Oscillateur EXTERNE, prï¿½cis, mais nï¿½cessite l'ajout d'un oscillateur sur PC14 et PC15 !
 
 			//	1/04/2015	12h34'56"
-			//RTC_TimeTypeDef time = {12, 34, 56};
+//			RTC_TimeTypeDef time = {14, 38, 00};
 
-			RTC_set_alarm(&(RTC_AlarmTypeDef){00, 00, 10}, TRUE, &flag_alarm);
+//			RTC_set_alarm(&(RTC_AlarmTypeDef){00, 00, 10}, TRUE, &flag_alarm);
 
 			printf("This demo will print the time every second.\n");
 			printf("Commands :\n");
@@ -64,8 +67,8 @@ running_e DEMO_RTC_process_main(bool_e ask_for_finish)
 				{
 					case 'r':
 						printf("reset time & date\n");
-						RTC_TimeTypeDef time = {00, 00, 00};
-						RTC_DateTypeDef date = {RTC_WEEKDAY_MONDAY, RTC_MONTH_APRIL, 1, 20};
+						RTC_TimeTypeDef time = {TIME_HOUR, TIME_MINUTES, TIME_SECONDS};
+						RTC_DateTypeDef date = {TIME_DAY, TIME_MONTH, TIME_DATE, TIME_YEAR};
 						RTC_set_time_and_date(&time, &date);
 						break;
 					case 'h':
@@ -109,7 +112,7 @@ static volatile bool_e * alarm_interrupt_flag = NULL;
  * 					pour utiliser la RTC, vous devez relier un quartz de 32768Hz entre PC14 et PC15.
  * 						Si c'est fait, indiquez TRUE
  * 					Sinon, il est possible d'utiliser l'oscillateur interne : indiquez FALSE
- * 					Attention, cet oscillateur est médiocre (pourcentage de déviation de plusieurs pourcents !)
+ * 					Attention, cet oscillateur est mï¿½diocre (pourcentage de dï¿½viation de plusieurs pourcents !)
  * 						mais il est pratique pour valider le concept...
  */
 void RTC_init(bool_e i_installed_an_external_oscillator)
@@ -199,7 +202,7 @@ void RTC_set_alarm(RTC_TimeTypeDef * alarm_time, bool_e enable_interrupt, bool_e
 			HAL_RTC_SetAlarm_IT(&rtc_handle, &alarm, RTC_FORMAT_BIN);
 			NVIC_EnableIRQ(RTC_IRQn);
 			if(flag)
-				alarm_interrupt_flag = flag;	//on sauvegarde l'adresse du flag pour qu'il soit levé lors de l'interruption provoquée par l'alarme.
+				alarm_interrupt_flag = flag;	//on sauvegarde l'adresse du flag pour qu'il soit levï¿½ lors de l'interruption provoquï¿½e par l'alarme.
 		}
 		else
 			HAL_RTC_SetAlarm(&rtc_handle, &alarm, RTC_FORMAT_BIN);
@@ -229,8 +232,8 @@ void RTC_get_alarm(RTC_AlarmTypeDef *sAlarm, uint32_t Alarm)
 }
 
 /*
- * Cette fonction permet de modifier la vitesse de la RTC (à des fins de tests notamment)
- * @param time_acceleration : 1 pour une vitesse normale. 60 pour un écoulement d'une minute par seconde. 5*60 pour 5mn/seconde...
+ * Cette fonction permet de modifier la vitesse de la RTC (ï¿½ des fins de tests notamment)
+ * @param time_acceleration : 1 pour une vitesse normale. 60 pour un ï¿½coulement d'une minute par seconde. 5*60 pour 5mn/seconde...
  * @pre		valeur maximale : 32768 secondes par seconde.
  */
 void RTC_set_time_acceleration(uint32_t time_acceleration)

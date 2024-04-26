@@ -6,13 +6,18 @@
   * @brief   Default main function.
   ******************************************************************************
 */
+// Imports de base
 #include "stm32f1xx_hal.h"
 #include "stm32f1_uart.h"
 #include "stm32f1_sys.h"
 #include "stm32f1_gpio.h"
 #include "macro_types.h"
 #include "systick.h"
+
+// Project libs
 #include "telemetre.h"
+#include "stm32f1_rtc.h"
+#include "time.h"
 
 // HC-SR04 télemètre ultrasons
 #include "stm32f103xb.h"
@@ -57,6 +62,14 @@ int main(void)
 	ADC_init();
 //	RTC_init(FALSE);
 
+	// Servo init
+	SERVO_init();
+	Led_value = 0;
+	ADC_init();
+//	RTC_init(FALSE);
+
+	// RTC Init
+	RTC_init(FALSE);
 	while (1)
 	{
 //		HCSR04_process_main();
