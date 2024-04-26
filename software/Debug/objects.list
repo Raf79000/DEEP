@@ -196,4 +196,6 @@
 "./src/clock.o"
 "./src/data.o"
 "./src/main.o"
+"./src/servo.o"
+"./src/set_servo.o"
 "./src/telemetre.o"

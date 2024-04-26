@@ -1,0 +1,3 @@
+../src/servo.c:15:6:SERVO_process_test	4
+../src/servo.c:31:6:SERVO_init	1
+../src/servo.c:40:6:SERVO_set_position	2

@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 ../src/main.c:27:6:UART_full_init	1
 ../src/main.c:37:5:main	1
+=======
+../src/main.c:33:6:UART_full_init	1
+../src/main.c:43:5:main	1
+../src/main.c:70:13:state_machine	3
+>>>>>>> main
