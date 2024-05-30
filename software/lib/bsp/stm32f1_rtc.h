@@ -16,7 +16,7 @@
 	/**	running_e DEMO_RTC_process_main(bool_e ask_for_finish)	 // Fonction de démonstration (partielle) de l'utilisation de ce module.
 	 * @brief exemple d'utilisation du module RTC.
 	 */
-	running_e DEMO_RTC_process_main(bool_e ask_for_finish);
+	RTC_TimeTypeDef DEMO_RTC_process_main(bool_e ask_for_finish);
 
 	/**
 	 * @brief initialise la RTC

@@ -27,8 +27,9 @@ src/set_servo.o: ../src/set_servo.c \
  ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/stm32f1_uart.h \
  ../lib/bsp/macro_types.h \
  C:/Users/0302331W/Documents/DEEP/software/include/config.h \
- ../lib/bsp/stm32f1_uart.h ../lib/bsp/stm32f1_gpio.h \
- ../lib/bsp/macro_types.h ../lib/bsp/systick.h ../lib/bsp/stm32f1_timer.h
+ ../lib/hal/inc/stm32f1xx_hal_rtc.h ../lib/bsp/stm32f1_uart.h \
+ ../lib/bsp/stm32f1_gpio.h ../lib/bsp/macro_types.h ../lib/bsp/systick.h \
+ ../lib/bsp/stm32f1_timer.h
 C:/Users/0302331W/Documents/DEEP/software/include/servo.h:
 ../lib/bsp/stm32f1_sys.h:
 ../lib/hal/inc/stm32f1xx_hal.h:
@@ -77,6 +78,7 @@ C:/Users/0302331W/Documents/DEEP/software/include/servo.h:
 ../lib/bsp/stm32f1_uart.h:
 ../lib/bsp/macro_types.h:
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:
 ../lib/bsp/stm32f1_uart.h:
 ../lib/bsp/stm32f1_gpio.h:
 ../lib/bsp/macro_types.h:

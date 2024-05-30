@@ -9,15 +9,12 @@
 #include "stm32f1_rtc.h"
 #include "stm32f1_uart.h"
 
-// Added libs
-#include "time.h"
-
 //______________________________________________
 
 /**	running_e DEMO_RTC_process_main(void)	 // Fonction de d�monstration (partielle) de l'utilisation de ce module.
  * @brief exemple d'utilisation du module RTC.
  */
-running_e DEMO_RTC_process_main(bool_e ask_for_finish)
+RTC_TimeTypeDef DEMO_RTC_process_main(bool_e ask_for_finish)
 {
 	typedef enum
 	{
@@ -25,10 +22,10 @@ running_e DEMO_RTC_process_main(bool_e ask_for_finish)
 		RUN
 	}state_e;
 	static state_e state = INIT;
-	running_e ret;
-	ret = IN_PROGRESS;
+	RTC_TimeTypeDef time;
+	RTC_DateTypeDef date;
 	static bool_e flag_alarm;
-	const char * weekday_str[7] = {"sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"};
+//	const char * weekday_str[7] = {"sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"};
 
 	switch(state)
 	{
@@ -42,20 +39,18 @@ running_e DEMO_RTC_process_main(bool_e ask_for_finish)
 
 //			RTC_set_alarm(&(RTC_AlarmTypeDef){00, 00, 10}, TRUE, &flag_alarm);
 
-			printf("This demo will print the time every second.\n");
-			printf("Commands :\n");
-			printf("h : help\n");
-			printf("r : reset time & date to default\n");
+//			printf("This demo will print the time every second.\n");
+//			printf("Commands :\n");
+//			printf("h : help\n");
+//			printf("r : reset time & date to default\n");
 
 			break;}
 		case RUN:{
 			static uint8_t previous_printed_time = 0;
-			RTC_TimeTypeDef time;
-			RTC_DateTypeDef date;
 			RTC_get_time_and_date(&time, &date);
 			if(time.Seconds != previous_printed_time)
 			{
-				printf("%s %2d/%2d/%2d - %2d:%2d:%2d\n", weekday_str[date.WeekDay], date.Date, date.Month, date.Year, time.Hours, time.Minutes, time.Seconds);
+//				printf("%s %2d/%2d/%2d - %2d:%2d:%2d\n", weekday_str[date.WeekDay], date.Date, date.Month, date.Year, time.Hours, time.Minutes, time.Seconds);
 				previous_printed_time = time.Seconds;
 			}
 
@@ -81,19 +76,19 @@ running_e DEMO_RTC_process_main(bool_e ask_for_finish)
 			}
 			if(flag_alarm)
 			{
-				printf("alarm occured\n");
+//				printf("alarm occured\n");
 				flag_alarm = FALSE;
 			}
 			if(ask_for_finish)
 			{
 				state = INIT;
-				ret = END_OK;
+//				ret = END_OK;
 			}
 			break;}
 		default:
 			break;
 	}
-	return ret;
+	return time;
 }
 
 

@@ -27,7 +27,7 @@ lib/bsp/dmx/dmx.o: ../lib/bsp/dmx/dmx.c ../lib/bsp/stm32f1_gpio.h \
  ../lib/bsp/macro_types.h ../lib/bsp/stm32f1_uart.h \
  ../lib/bsp/macro_types.h \
  C:/Users/0302331W/Documents/DEEP/software/include/config.h \
- ../lib/bsp/systick.h
+ ../lib/hal/inc/stm32f1xx_hal_rtc.h ../lib/bsp/systick.h
 ../lib/bsp/stm32f1_gpio.h:
 ../lib/hal/inc/stm32f1xx_hal.h:
 ../lib/hal/inc/stm32f1xx_hal_conf.h:
@@ -77,4 +77,5 @@ lib/bsp/dmx/dmx.o: ../lib/bsp/dmx/dmx.c ../lib/bsp/stm32f1_gpio.h \
 ../lib/bsp/stm32f1_uart.h:
 ../lib/bsp/macro_types.h:
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:
 ../lib/bsp/systick.h:

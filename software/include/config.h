@@ -9,6 +9,21 @@
 #define CONFIG_H_
 #include "stm32f1xx_hal.h"
 
+//_______________________________________________________
+// clock params
+#include "stm32f1xx_hal_rtc.h"
+
+#define TIME_HOUR			15
+#define TIME_MINUTES		03
+#define TIME_SECONDS		00
+
+#define TIME_DATE			26
+#define TIME_DAY			RTC_WEEKDAY_FRIDAY
+#define TIME_MONTH			RTC_MONTH_APRIL
+#define TIME_YEAR			24
+//_______________________________________________________
+
+
 //Choix de la cible utilis�e.
 #define NUCLEO	1
 #define BLUEPILL 0
@@ -69,7 +84,7 @@
 	//16 entr�es analogiques peuvent �tre activ�es maximum.
 	//2 entr�es analogiques doivent �tre activ�es minimum. (Vref est un choix possible si vous utilisez une seule entr�e)
 	#define USE_AN0			1	//Broche correspondante : PA0
-	#define USE_AN1			0	//Broche correspondante : PA1
+	#define USE_AN1			1	//Broche correspondante : PA1
 	#define USE_AN2			0	//Broche correspondante : PA2	//Sur la Nucleo, cette broche n'est pas c�bl�e !
 	#define USE_AN3			0	//Broche correspondante : PA3	//Sur la Nucleo, cette broche n'est pas c�bl�e !
 	#define USE_AN4			0	//Broche correspondante : PA4

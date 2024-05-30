@@ -25,7 +25,7 @@ lib/bsp/stm32f1_timer.o: ../lib/bsp/stm32f1_timer.c \
  ../lib/hal/inc/stm32f1xx_ll_usb.h ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
  ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/macro_types.h \
  C:/Users/0302331W/Documents/DEEP/software/include/config.h \
- ../lib/bsp/stm32f1_gpio.h
+ ../lib/hal/inc/stm32f1xx_hal_rtc.h ../lib/bsp/stm32f1_gpio.h
 ../lib/bsp/stm32f1_timer.h:
 ../lib/hal/inc/stm32f1xx_hal.h:
 ../lib/hal/inc/stm32f1xx_hal_conf.h:
@@ -72,4 +72,5 @@ lib/bsp/stm32f1_timer.o: ../lib/bsp/stm32f1_timer.c \
 ../lib/hal/inc/stm32f1xx_hal_hcd.h:
 ../lib/bsp/macro_types.h:
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:
 ../lib/bsp/stm32f1_gpio.h:

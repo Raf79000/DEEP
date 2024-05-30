@@ -25,10 +25,10 @@ lib/middleware/MIDI/usbd_midi_if.o: ../lib/middleware/MIDI/usbd_midi_if.c \
  ../lib/hal/inc/stm32f1xx_hal_uart.h ../lib/hal/inc/stm32f1xx_hal_usart.h \
  ../lib/hal/inc/stm32f1xx_hal_wwdg.h ../lib/hal/inc/stm32f1xx_hal_pcd.h \
  ../lib/hal/inc/stm32f1xx_ll_usb.h ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
- ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/middleware/MIDI/usbd_midi.h \
- ../lib/middleware/MIDI/usbd_ioreq.h ../lib/middleware/MIDI/usbd_def.h \
- ../lib/middleware/MIDI/usbd_conf.h ../lib/middleware/MIDI/usbd_core.h \
- ../lib/middleware/MIDI/usbd_ctlreq.h
+ ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/hal/inc/stm32f1xx_hal_rtc.h \
+ ../lib/middleware/MIDI/usbd_midi.h ../lib/middleware/MIDI/usbd_ioreq.h \
+ ../lib/middleware/MIDI/usbd_def.h ../lib/middleware/MIDI/usbd_conf.h \
+ ../lib/middleware/MIDI/usbd_core.h ../lib/middleware/MIDI/usbd_ctlreq.h
 ../lib/middleware/MIDI/usbd_midi_if.h:
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
 ../lib/hal/inc/stm32f1xx_hal.h:
@@ -74,6 +74,7 @@ C:/Users/0302331W/Documents/DEEP/software/include/config.h:
 ../lib/hal/inc/stm32f1xx_ll_usb.h:
 ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h:
 ../lib/hal/inc/stm32f1xx_hal_hcd.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:
 ../lib/middleware/MIDI/usbd_midi.h:
 ../lib/middleware/MIDI/usbd_ioreq.h:
 ../lib/middleware/MIDI/usbd_def.h:

@@ -24,8 +24,8 @@ lib/bsp/stm32f1_extit.o: ../lib/bsp/stm32f1_extit.c \
  ../lib/hal/inc/stm32f1xx_hal_uart.h ../lib/hal/inc/stm32f1xx_hal_usart.h \
  ../lib/hal/inc/stm32f1xx_hal_wwdg.h ../lib/hal/inc/stm32f1xx_hal_pcd.h \
  ../lib/hal/inc/stm32f1xx_ll_usb.h ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
- ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/stm32f1_extit.h \
- ../lib/bsp/macro_types.h
+ ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/hal/inc/stm32f1xx_hal_rtc.h \
+ ../lib/bsp/stm32f1_extit.h ../lib/bsp/macro_types.h
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
 ../lib/hal/inc/stm32f1xx_hal.h:
 ../lib/hal/inc/stm32f1xx_hal_conf.h:
@@ -70,5 +70,6 @@ C:/Users/0302331W/Documents/DEEP/software/include/config.h:
 ../lib/hal/inc/stm32f1xx_ll_usb.h:
 ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h:
 ../lib/hal/inc/stm32f1xx_hal_hcd.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:
 ../lib/bsp/stm32f1_extit.h:
 ../lib/bsp/macro_types.h:

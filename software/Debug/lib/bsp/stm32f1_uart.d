@@ -26,7 +26,7 @@ lib/bsp/stm32f1_uart.o: ../lib/bsp/stm32f1_uart.c \
  ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/stm32f1_uart.h \
  ../lib/bsp/macro_types.h \
  C:/Users/0302331W/Documents/DEEP/software/include/config.h \
- ../lib/bsp/stm32f1_gpio.h
+ ../lib/hal/inc/stm32f1xx_hal_rtc.h ../lib/bsp/stm32f1_gpio.h
 ../lib/hal/inc/stm32f1xx_hal.h:
 ../lib/hal/inc/stm32f1xx_hal_conf.h:
 ../lib/hal/inc/stm32f1xx_hal_rcc.h:
@@ -73,4 +73,5 @@ lib/bsp/stm32f1_uart.o: ../lib/bsp/stm32f1_uart.c \
 ../lib/bsp/stm32f1_uart.h:
 ../lib/bsp/macro_types.h:
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:
 ../lib/bsp/stm32f1_gpio.h:

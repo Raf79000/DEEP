@@ -1,3 +1,4 @@
 ../src/servo.c:15:6:SERVO_process_test	4
-../src/servo.c:31:6:SERVO_init	1
-../src/servo.c:40:6:SERVO_set_position	2
+../src/servo.c:31:6:SERVO_area_process	1
+../src/servo.c:35:6:SERVO_init	1
+../src/servo.c:44:6:SERVO_set_position	2

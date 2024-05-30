@@ -24,7 +24,8 @@ src/telemetre.o: ../src/telemetre.c ../lib/hal/inc/stm32f1xx_hal.h \
  ../lib/hal/inc/stm32f1xx_ll_usb.h ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
  ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/macro_types.h \
  ../lib/bsp/HC-SR04/HCSR04.h \
- C:/Users/0302331W/Documents/DEEP/software/include/config.h
+ C:/Users/0302331W/Documents/DEEP/software/include/config.h \
+ ../lib/hal/inc/stm32f1xx_hal_rtc.h
 ../lib/hal/inc/stm32f1xx_hal.h:
 ../lib/hal/inc/stm32f1xx_hal_conf.h:
 ../lib/hal/inc/stm32f1xx_hal_rcc.h:
@@ -71,3 +72,4 @@ src/telemetre.o: ../src/telemetre.c ../lib/hal/inc/stm32f1xx_hal.h \
 ../lib/bsp/macro_types.h:
 ../lib/bsp/HC-SR04/HCSR04.h:
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:

@@ -25,8 +25,9 @@ lib/bsp/MCP23017/mcp23017.o: ../lib/bsp/MCP23017/mcp23017.c \
  ../lib/hal/inc/stm32f1xx_hal_uart.h ../lib/hal/inc/stm32f1xx_hal_usart.h \
  ../lib/hal/inc/stm32f1xx_hal_wwdg.h ../lib/hal/inc/stm32f1xx_hal_pcd.h \
  ../lib/hal/inc/stm32f1xx_ll_usb.h ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
- ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/bsp/macro_types.h \
- ../lib/bsp/stm32f1_i2c.h ../lib/bsp/macro_types.h
+ ../lib/hal/inc/stm32f1xx_hal_hcd.h ../lib/hal/inc/stm32f1xx_hal_rtc.h \
+ ../lib/bsp/macro_types.h ../lib/bsp/stm32f1_i2c.h \
+ ../lib/bsp/macro_types.h
 ../lib/bsp/MCP23017/mcp23017.h:
 C:/Users/0302331W/Documents/DEEP/software/include/config.h:
 ../lib/hal/inc/stm32f1xx_hal.h:
@@ -72,6 +73,7 @@ C:/Users/0302331W/Documents/DEEP/software/include/config.h:
 ../lib/hal/inc/stm32f1xx_ll_usb.h:
 ../lib/hal/inc/stm32f1xx_hal_pcd_ex.h:
 ../lib/hal/inc/stm32f1xx_hal_hcd.h:
+../lib/hal/inc/stm32f1xx_hal_rtc.h:
 ../lib/bsp/macro_types.h:
 ../lib/bsp/stm32f1_i2c.h:
 ../lib/bsp/macro_types.h:
