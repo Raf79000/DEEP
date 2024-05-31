@@ -56,56 +56,63 @@ struct area_struct {
 	GPIO_TypeDef * echo_gpio;
 	uint16_t echo_pin;
 	uint16_t distance;
+	bool_e object_flag;
+	bool_e mesure_flag;
 };
-static struct area_struct area_a = {0, INIT, GPIOA, GPIO_PIN_10, GPIOB, GPIO_PIN_4, 0};
-static struct area_struct area_b = {0, INIT, GPIOA, GPIO_PIN_11, GPIOB, GPIO_PIN_5, 0};
-static struct area_struct area_c = {0, INIT, GPIOA, GPIO_PIN_12, GPIOB, GPIO_PIN_6, 0};
+static struct area_struct area_a = {0, INIT, GPIOA, GPIO_PIN_10, GPIOB, GPIO_PIN_4, 0, 0, 0};
+static struct area_struct area_b = {0, INIT, GPIOA, GPIO_PIN_11, GPIOB, GPIO_PIN_5, 0, 0, 0};
+static struct area_struct area_c = {0, INIT, GPIOA, GPIO_PIN_12, GPIOB, GPIO_PIN_6, 0, 0, 0};
 
-void HCSR04_state_machine(struct area_struct area) {
+void HCSR04_state_machine(struct area_struct * area) {
 		static uint32_t tlocal;
 
-		switch(area.state){
+		switch(area->state){
 		case INIT:
-			if(HCSR04_add(&area.id, area.trigg_gpio, area.trigg_pin, area.echo_gpio, area.echo_pin) != HAL_OK)
+			if(HCSR04_add(&area->id, area->trigg_gpio, area->trigg_pin, area->echo_gpio, area->echo_pin) != HAL_OK)
 			{
 				printf("HCSR04 non ajout� - erreur g�nante\n");
-				area.state = FAIL;
+				area->state = FAIL;
 			}
 			else
 			{
 				printf("HCSR04 ajout�\n");
-				area.state = LAUNCH_MEASURE;
+				area->state = LAUNCH_MEASURE;
 			}
 			break;
 		case LAUNCH_MEASURE:
-			HCSR04_run_measure(area.id);
-			tlocal = HAL_GetTick();
-			area.state = WAIT_DURING_MEASURE;
+			if(area->mesure_flag)
+			{
+				area->mesure_flag = FALSE;
+				HCSR04_run_measure(area->id);
+				tlocal = HAL_GetTick();
+				area->state = WAIT_DURING_MEASURE;
+			}
 			break;
 		case WAIT_DURING_MEASURE:
-			switch(HCSR04_get_value(area.id, &area.distance))
+			switch(HCSR04_get_value(area->id, &area->distance))
 			{
 				case HAL_BUSY:
 					//rien � faire... on attend...
 					break;
 				case HAL_OK:
-					printf("sensor %d - distance : %d\n", area.id, area.distance);
-					area.state = WAIT_BEFORE_NEXT_MEASURE;
+//					printf("sensor %d - distance : %d\n", area->id, area->distance);
+					area->object_flag = (area->distance < 100);
+					area->state = WAIT_BEFORE_NEXT_MEASURE;
 					break;
 				case HAL_ERROR:
-					printf("sensor %d - erreur ou mesure non lanc�e\n", area.id);
-					area.state = WAIT_BEFORE_NEXT_MEASURE;
+					printf("sensor %d - erreur ou mesure non lanc�e\n", area->id);
+					area->state = WAIT_BEFORE_NEXT_MEASURE;
 					break;
 
 				case HAL_TIMEOUT:
-					printf("sensor %d - timeout\n", area.id);
-					area.state = WAIT_BEFORE_NEXT_MEASURE;
+//					printf("sensor %d - timeout\n", area->id);
+					area->state = WAIT_BEFORE_NEXT_MEASURE;
 					break;
 			}
 			break;
 		case WAIT_BEFORE_NEXT_MEASURE:
 			if(HAL_GetTick() > tlocal + PERIOD_MEASURE)
-				area.state = LAUNCH_MEASURE;
+				area->state = LAUNCH_MEASURE;
 			break;
 		default:
 			break;
@@ -114,15 +121,37 @@ void HCSR04_state_machine(struct area_struct area) {
 
 }
 
+#define ONE_MEASURE_DURATION	130
+#define PERIOD_US	3*ONE_MEASURE_DURATION
 void process_ms(void)
 {
-    if(t){
         //lecture 3 US sensor
         //lecture photodiode
-        Led_value = ADC_getValue(ADC_CHANNEL_1);
-        h = DEMO_RTC_process_main(FALSE);
+    Led_value = ADC_getValue(ADC_CHANNEL_1);
+    if(t){
         t--;
     }
+
+    static uint16_t us_t = 0;
+    us_t = (us_t+1)%PERIOD_US;
+    if(us_t%ONE_MEASURE_DURATION == 0)
+    {
+    	switch(us_t/ONE_MEASURE_DURATION)
+    	{
+    		case 0:
+    			area_a.mesure_flag = TRUE;
+    			break;
+    		case 1:
+    			area_b.mesure_flag = TRUE;
+    			break;
+    		case 2:
+    			area_c.mesure_flag = TRUE;
+    			break;
+    		default:
+    			break;
+    	}
+    }
+
 }
 
 void full_init(void) {
@@ -163,33 +192,37 @@ static void servo_orientation(void){
 
 	switch(SERVO_state){
 	case INIT:
-		printf("area_c: %d", area_c.distance); // area_a: %d; area_b: %d, , area_a, area_b,
-		printf("area_a: %d", area_a.distance);
-		printf("area_b: %d", area_b.distance);
-		if ((area_a.distance == area_b.distance)||(area_a.distance == area_c.distance)||(area_c.distance == area_b.distance)){
+		if (
+				(area_a.object_flag == area_b.object_flag && area_a.object_flag == 1)||
+				(area_a.object_flag == area_c.object_flag && area_a.object_flag == 1)||
+				(area_c.object_flag == area_b.object_flag && area_c.object_flag == 1)){
+			printf("multi");
 			SERVO_state = MULTI;
-		} else if (area_a.distance < 150){
+		} else if (area_a.object_flag == 1){
+			printf("set A");
 			SERVO_state = AREA_A;
-		} else if (area_b.distance < 150) {
-			SERVO_state = AREA_B;
-		} else {
+		} else if (area_c.object_flag == 1) {
+			printf("set C");
 			SERVO_state = AREA_C;
+		} else {
+			printf("set B");
+			SERVO_state = AREA_B;
 		}
 		break;
 	case AREA_A:
-		SERVO_set_position(0);
+		SERVO_set_position(5);
 		SERVO_state = INIT;
 		break;
 	case AREA_B:
-		SERVO_set_position(50);
+		SERVO_set_position(12);
 		SERVO_state = INIT;
 		break;
 	case AREA_C:
-		SERVO_set_position(100);
+		SERVO_set_position(25);
 		SERVO_state = INIT;
 		break;
 	case MULTI:
-		SERVO_set_position(50);
+		SERVO_set_position(12);
 		SERVO_state = INIT;
 		break;
 	}
@@ -208,17 +241,15 @@ static void state(void){
     switch(state){
         case INIT:
             //todo en f° de la photodiode passer en etat nuit ou jour
-        	state = NIGHT;
-//            if (Led_value > 100 && h.Seconds < 18){ //
-//                state = DAY;
-//            }else{
-//                state = NIGHT;
-//            }
+            if (Led_value > 100 && h.Seconds < 20){ //
+                state = DAY;
+            }else{
+                state = NIGHT;
+            }
             break;
         case DAY:
             //todo eteindre la led et mettre la stm en mode veille
         	pin_state = FALSE;
-        	printf("CAUZ DAY'N'NIGHT");
         	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, pin_state);
         	if (Led_value <= 100 || h.Seconds >= 20){
         		state = NIGHT;
@@ -229,7 +260,7 @@ static void state(void){
         	pin_state = TRUE;
         	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, pin_state);
         	if (Led_value > 100 && h.Seconds < 20){
-        		state = NIGHT;
+        		state = DAY;
         	}
         	break;
     }
@@ -245,15 +276,19 @@ int main(void)
 
 	while (1)
 	{
-		t = 1;
+		if(!t)
+		{
+			t = 1000;
+			h = DEMO_RTC_process_main(FALSE);
+		}
 		//		printf("%d\n", Led_value);
 		//		printf("%2d\n", h.Seconds);
 
 		// traitement capteurs ultrasons
 		HCSR04_process_main();
-		HCSR04_state_machine(area_a);
-		HCSR04_state_machine(area_b);
-		HCSR04_state_machine(area_c);
+		HCSR04_state_machine(&area_a);
+		HCSR04_state_machine(&area_b);
+		HCSR04_state_machine(&area_c);
 		// traitement servos
 		state();
 		HAL_Delay(500);
