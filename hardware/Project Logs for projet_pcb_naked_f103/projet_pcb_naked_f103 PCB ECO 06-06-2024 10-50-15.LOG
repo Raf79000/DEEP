@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=Recho+1 NewDesignator=Re1+
+Change Component Designator: OldDesignator=Recho+2 NewDesignator=Re2+
+Change Component Designator: OldDesignator=Recho+3 NewDesignator=Re3+
+Change Component Designator: OldDesignator=Recho-1 NewDesignator=Re1-
+Change Component Designator: OldDesignator=Recho-2 NewDesignator=Re2-
+Change Component Designator: OldDesignator=Recho-3 NewDesignator=Re3-
+Change Net Name : Old Net Name=NetRecho+1_2 New Net Name=NetRe1+_2
+Change Net Name : Old Net Name=NetRecho+2_2 New Net Name=NetRe2+_2
+Change Net Name : Old Net Name=NetRecho+3_2 New Net Name=NetRe3+_2
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component Uc STM32F103C8T6

@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=B0-1
+Removed Pin From Net: NetName=GND Pin=CB0-1
+Removed Pin From Net: NetName=+3V3 Pin=RpuB0-2
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=B0
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=CB0
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=RpuB0

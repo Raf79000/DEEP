@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=+5V_Puissance Pin=Servo0-2
+Added Pin To Net: NetName=+5V Pin=Servo0-2
+Added Room: Name=projet_pcb_naked_f103

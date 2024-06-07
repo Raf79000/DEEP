@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=Echo_R Pin=Uc-14
+Removed Pin From Net: NetName=Echo_MID Pin=Uc-15
+Removed Pin From Net: NetName=Echo_L Pin=Uc-16
+Removed Pin From Net: NetName=LED0 Pin=Uc-25
+Removed Pin From Net: NetName=LED1 Pin=Uc-26
+Removed Pin From Net: NetName=Btn_1 Pin=Uc-38
+Removed Pin From Net: NetName=PA8_PWM1 Pin=Uc-45
+Added Pin To Net: NetName=LED0 Pin=Uc-22
+Added Pin To Net: NetName=LED1 Pin=Uc-25
+Added Pin To Net: NetName=PA8_PWM1 Pin=Uc-29
+Added Pin To Net: NetName=Echo_MID Pin=Uc-40
+Added Pin To Net: NetName=Echo_L Pin=Uc-41
+Added Pin To Net: NetName=Echo_R Pin=Uc-42
+Added Pin To Net: NetName=US_Trigger_L Pin=Uc-32
+Added Pin To Net: NetName=US_Trigger_L Pin=US1-2
+Added Net: Name=US_Trigger_L
+Added Pin To Net: NetName=US_Trigger_M Pin=Uc-31
+Added Pin To Net: NetName=US_Trigger_M Pin=US2-2
+Added Net: Name=US_Trigger_M
+Added Pin To Net: NetName=US_Trigger_R Pin=Uc-33
+Added Pin To Net: NetName=US_Trigger_R Pin=US3-2
+Added Net: Name=US_Trigger_R

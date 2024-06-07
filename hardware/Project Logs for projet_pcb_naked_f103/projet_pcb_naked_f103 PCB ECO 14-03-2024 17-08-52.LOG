@@ -1,0 +1,18 @@
+Change Component Designator: OldDesignator=J? NewDesignator=US1
+Added Component: Designator=US2(BARRETTE_4_F_D)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "F_D_4"; VariantName = "[No Variations]"
+Added Component: Designator=US3(BARRETTE_4_F_D)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "F_D_4"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5V Pin=US2-1
+Added Pin To Net: NetName=US_Trigger Pin=US2-2
+Added Pin To Net: NetName=NetRecho+2_2 Pin=US2-3
+Added Pin To Net: NetName=GND Pin=US2-4
+Added Pin To Net: NetName=+5V Pin=US3-1
+Added Pin To Net: NetName=US_Trigger Pin=US3-2
+Added Pin To Net: NetName=NetRecho+3_2 Pin=US3-3
+Added Pin To Net: NetName=GND Pin=US3-4
+Change Net Name : Old Net Name=NetJ?_3 New Net Name=NetRecho+1_2
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component US2 BARRETTE_4 CONTACTS_1 RANGEE_FEMELLE_DROITE
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component US3 BARRETTE_4 CONTACTS_1 RANGEE_FEMELLE_DROITE

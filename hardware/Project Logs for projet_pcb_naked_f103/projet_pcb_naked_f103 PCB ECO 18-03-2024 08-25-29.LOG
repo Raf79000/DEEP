@@ -1,0 +1,3 @@
+Added Pin To Net: NetName=PA13_SDWIO Pin=Uc-34
+Added Pin To Net: NetName=PA14_SWDCLK Pin=Uc-37
+Change Net Name : Old Net Name=NetB0_2 New Net Name=Btn_1

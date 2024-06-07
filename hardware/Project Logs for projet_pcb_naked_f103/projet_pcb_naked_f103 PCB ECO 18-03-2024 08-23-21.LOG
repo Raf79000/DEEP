@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=GND Pin=CdDAC-1
+Removed Pin From Net: NetName=+5V Pin=CdDAC-2
+Removed Pin From Net: NetName=GND Pin=CfDACout-1
+Removed Pin From Net: NetName=+5V Pin=IC?-1
+Removed Pin From Net: NetName=GND Pin=IC?-7
+Removed Pin From Net: NetName=+5V Pin=Rref+?-1
+Removed Pin From Net: NetName=GND Pin=Rref-?-2
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=CdDAC
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=CfDACout
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=IC?
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=RfDACout
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=Rref+?
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=Rref-?

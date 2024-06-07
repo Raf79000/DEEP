@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=GND Pin=D0-2
+Removed Pin From Net: NetName=NetD1_1 Pin=RLed1-1
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=D0
+Change Component Footprint: Designator=D1 Old Footprint=LED_3MM New Footprint=LED_CMS_0805
+Change Component Comment : Designator=D1 Old Comment=LED_3MM New Comment=LED_CMS_0805
+Change component parameters: Designator = "D1"; Footprint = "LED_CMS_0805"; UniqueID = "\WZBNAGAR"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Added Component: Designator=D2(LED_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=D2-2
+Added Pin To Net: NetName=NetD1_1 Pin=RLed0-1
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=RLed1-1
+Added Net: Name=NetD2_1
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component D2 LED_CMS_0805

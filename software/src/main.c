@@ -19,8 +19,6 @@
 #include "time.h"
 
 // HC-SR04 télemètre ultrasons
-//#include "telemetre.h"
-//#include "stm32f103xb.h"
 #include "HC-SR04/HCSR04.h" // on évite les warnings dégeulasses
 
 #define PERIOD_MEASURE			100
@@ -40,29 +38,41 @@ volatile int16_t t = 0;
 volatile RTC_TimeTypeDef h;
 static uint16_t pin_state;
 static uint16_t Led_value;
+/**
+ * @brief Enum for the states of the HC-SR04 sensor.
+ */
 typedef enum {
-			INIT,
-			FAIL,
-			LAUNCH_MEASURE,
-			RUN,
-			WAIT_DURING_MEASURE,
-			WAIT_BEFORE_NEXT_MEASURE
-}HCSR04_state_e;
+    INIT,                    /**< Initial state */
+    FAIL,                    /**< Failure state */
+    LAUNCH_MEASURE,          /**< Launch measurement state */
+    RUN,                     /**< Run state */
+    WAIT_DURING_MEASURE,     /**< Wait during measurement state */
+    WAIT_BEFORE_NEXT_MEASURE /**< Wait before next measurement state */
+} HCSR04_state_e;
+/**
+ * @brief Structure for the sensor area.
+ */
 struct area_struct {
-	uint8_t id;
-	HCSR04_state_e state;
-	GPIO_TypeDef * trigg_gpio;
-	uint16_t trigg_pin;
-	GPIO_TypeDef * echo_gpio;
-	uint16_t echo_pin;
-	uint16_t distance;
-	bool_e object_flag;
-	bool_e mesure_flag;
+    uint8_t id;              /**< ID of the area */
+    HCSR04_state_e state;    /**< Current state of the sensor */
+    GPIO_TypeDef * trigg_gpio; /**< Trigger GPIO port */
+    uint16_t trigg_pin;      /**< Trigger GPIO pin */
+    GPIO_TypeDef * echo_gpio; /**< Echo GPIO port */
+    uint16_t echo_pin;       /**< Echo GPIO pin */
+    uint16_t distance;       /**< Measured distance */
+    bool_e object_flag;      /**< Object detected flag */
+    bool_e mesure_flag;      /**< Measurement flag */
 };
+
 static struct area_struct area_a = {0, INIT, GPIOA, GPIO_PIN_10, GPIOB, GPIO_PIN_4, 0, 0, 0};
 static struct area_struct area_b = {0, INIT, GPIOA, GPIO_PIN_11, GPIOB, GPIO_PIN_5, 0, 0, 0};
 static struct area_struct area_c = {0, INIT, GPIOA, GPIO_PIN_12, GPIOB, GPIO_PIN_6, 0, 0, 0};
 
+/**
+ * @brief State machine for the HC-SR04 (ultrasound) sensor.
+ *
+ * @param area Pointer to the area structure.
+ */
 void HCSR04_state_machine(struct area_struct * area) {
 		static uint32_t tlocal;
 
@@ -123,6 +133,9 @@ void HCSR04_state_machine(struct area_struct * area) {
 
 #define ONE_MEASURE_DURATION	130
 #define PERIOD_US	3*ONE_MEASURE_DURATION
+/**
+ * @brief Process function called every millisecond.
+ */
 void process_ms(void)
 {
         //lecture 3 US sensor
@@ -153,7 +166,9 @@ void process_ms(void)
     }
 
 }
-
+/**
+ * @brief Full initialization function.
+ */
 void full_init(void) {
 	// uint16_t distance;
 	//Initialisation de la couche logicielle HAL (Hardware Abstraction Layer)
@@ -179,7 +194,9 @@ void full_init(void) {
 	// process_ms init
 	Systick_add_callback_function(&process_ms);
 }
-
+/**
+ * @brief Function to control servo orientation.
+ */
 static void servo_orientation(void){
 	typedef enum {
 		INIT,
@@ -227,7 +244,9 @@ static void servo_orientation(void){
 		break;
 	}
 }
-
+/**
+ * @brief Main state function. Controls DAY or NIGHT state
+ */
 static void state(void){
     typedef enum
     {
@@ -266,6 +285,10 @@ static void state(void){
     }
 
 }
+/**
+ * @brief Main function.
+ * @return int
+ */
 int main(void)
 {
 	// initialisation

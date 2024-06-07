@@ -1,0 +1,104 @@
+*************************************************************
+FileName = projet_pcb_naked_f103.PCBDOC
+ODB++ directory structure
+*************************************************************
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\matrix\matrix
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\profile
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\stephdr
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\toppaste\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\toppaste\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\keepoutlayer\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\keepoutlayer\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical1\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical1\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical4\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical4\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical14\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical14\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical13\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical13\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical15\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical15\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottompaste\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottompaste\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\topsolder\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\topsolder\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottomsolder\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottomsolder\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottomoverlay\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottomoverlay\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\topoverlay\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\topoverlay\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\toplayer\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\toplayer\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottomlayer\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottomlayer\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\attrlist
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\tools
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\components
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\steps\pcb\eda\data
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s59.0551_240\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s59.0551_300\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s63.0551_240\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s63.0551_300\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s63.0551_240\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s63.0551_300\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s59.0551_240\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s59.0551_300\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s59.0551_240\features
+
+Generated File : C:\Users\matth\Downloads\projet_pcb_naked_f103\projet_pcb_naked_f103\Project Outputs for Free Documents\ODB\odb\symbols\s59.0551_300\features
+

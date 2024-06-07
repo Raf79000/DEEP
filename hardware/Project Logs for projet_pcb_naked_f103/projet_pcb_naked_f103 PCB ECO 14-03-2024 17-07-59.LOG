@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=+5V Pin=US-1
+Removed Pin From Net: NetName=US_Trigger Pin=US-2
+Removed Pin From Net: NetName=GND Pin=US-4
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=US
+Added Component: Designator=J?(BARRETTE_4_F_D)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "F_D_4"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5V Pin=J?-1
+Added Pin To Net: NetName=US_Trigger Pin=J?-2
+Added Pin To Net: NetName=GND Pin=J?-4
+Added Pin To Net: NetName=NetJ?_3 Pin=J?-3
+Added Pin To Net: NetName=NetJ?_3 Pin=Recho+1-2
+Added Net: Name=NetJ?_3
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component J? BARRETTE_4 CONTACTS_1 RANGEE_FEMELLE_DROITE

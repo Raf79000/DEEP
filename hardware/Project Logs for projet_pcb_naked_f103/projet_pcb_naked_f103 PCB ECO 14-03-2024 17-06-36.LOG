@@ -1,0 +1,110 @@
+Removed Pin From Net: NetName=GND Pin=J_analogSensor-1
+Removed Pin From Net: NetName=+3V3 Pin=J_analogSensor-3
+Removed Pin From Net: NetName=GND Pin=RBoot0-1
+Removed Pin From Net: NetName=GND Pin=Recho--1
+Removed Pin From Net: NetName=PA13_SDWIO Pin=Uc-34
+Removed Pin From Net: NetName=PA14_SWDCLK Pin=Uc-37
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=J_analogSensor
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=RBoot0
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=Recho+
+Removed Member From Class: ClassName=projet_pcb_naked_f103 Member=Recho-
+Change Component Footprint: Designator=Cd1 Old Footprint=C0805_N New Footprint=CONDENSATEUR_CMS_0805
+Change Component Footprint: Designator=Cd2 Old Footprint=C0805_N New Footprint=CONDENSATEUR_CMS_0805
+Change Component Footprint: Designator=Cd3 Old Footprint=C0805_N New Footprint=CONDENSATEUR_CMS_0805
+Change Component Footprint: Designator=Cd4 Old Footprint=C0805_N New Footprint=CONDENSATEUR_CMS_0805
+Change Component Comment : Designator=Cd1 Old Comment=Condensateur 0805 New Comment=CMS_0805
+Change Component Comment : Designator=Cd2 Old Comment=Condensateur 0805 New Comment=CMS_0805
+Change Component Comment : Designator=Cd3 Old Comment=Condensateur 0805 New Comment=CMS_0805
+Change Component Comment : Designator=Cd4 Old Comment=Condensateur 0805 New Comment=CMS_0805
+Change component parameters: Designator = "Cd1"; Footprint = "CONDENSATEUR_CMS_0805"; UniqueID = "\ONNINGML"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "Cd2"; Footprint = "CONDENSATEUR_CMS_0805"; UniqueID = "\HXCZAHRI"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "Cd3"; Footprint = "CONDENSATEUR_CMS_0805"; UniqueID = "\FSMTQUWC"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "Cd4"; Footprint = "CONDENSATEUR_CMS_0805"; UniqueID = "\DOSWFBGP"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Added Component: Designator=J1(BORNIER2_A_VIS)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "BORNIER2_D"; VariantName = "[No Variations]"
+Added Component: Designator=RBoot(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100K"; VariantName = "[No Variations]"
+Added Component: Designator=Recho+1(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Component: Designator=Recho+2(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Component: Designator=Recho+3(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Component: Designator=Recho-1(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Component: Designator=Recho-2(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Component: Designator=Recho-3(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "2.2K"; VariantName = "[No Variations]"
+Added Component: Designator=RPDLDR(RESISTANCE_CMS_0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Type"; Value = "CMS_0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3V3 Pin=J1-1
+Added Pin To Net: NetName=GND Pin=RBoot-1
+Added Pin To Net: NetName=GND Pin=Recho-1-1
+Added Pin To Net: NetName=GND Pin=Recho-2-1
+Added Pin To Net: NetName=GND Pin=Recho-3-1
+Added Pin To Net: NetName=GND Pin=RPDLDR-1
+Added Pin To Net: NetName=Echo_L Pin=Recho+1-1
+Added Pin To Net: NetName=Echo_L Pin=Recho-1-2
+Added Pin To Net: NetName=Echo_L Pin=Uc-16
+Added Net: Name=Echo_L
+Added Pin To Net: NetName=Echo_MID Pin=Recho+2-1
+Added Pin To Net: NetName=Echo_MID Pin=Recho-2-2
+Added Pin To Net: NetName=Echo_MID Pin=Uc-15
+Added Net: Name=Echo_MID
+Added Pin To Net: NetName=Echo_R Pin=Recho+3-1
+Added Pin To Net: NetName=Echo_R Pin=Recho-3-2
+Added Pin To Net: NetName=Echo_R Pin=Uc-14
+Added Net: Name=Echo_R
+Added Pin To Net: NetName=NetRBoot_2 Pin=RBoot-2
+Added Pin To Net: NetName=NetRBoot_2 Pin=Uc-44
+Added Net: Name=NetRBoot_2
+Added Pin To Net: NetName=NetRecho+1_2 Pin=Recho+1-2
+Added Pin To Net: NetName=NetRecho+1_2 Pin=US-3
+Added Net: Name=NetRecho+1_2
+Added Pin To Net: NetName=NetRecho+2_2 Pin=Recho+2-2
+Added Net: Name=NetRecho+2_2
+Added Pin To Net: NetName=NetRecho+3_2 Pin=Recho+3-2
+Added Net: Name=NetRecho+3_2
+Added Pin To Net: NetName=PHOTO Pin=J1-2
+Added Pin To Net: NetName=PHOTO Pin=RPDLDR-2
+Added Pin To Net: NetName=PHOTO Pin=Uc-17
+Added Net: Name=PHOTO
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component J1 BORNIER2 DROIT A VIS
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component RBoot RESISTANCE_CMS_0805
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component Recho+1 RESISTANCE_CMS_0805
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component Recho+2 RESISTANCE_CMS_0805
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component Recho+3 RESISTANCE_CMS_0805
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component Recho-1 RESISTANCE_CMS_0805
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component Recho-2 RESISTANCE_CMS_0805
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component Recho-3 RESISTANCE_CMS_0805
+Added Member To Class: ClassName=projet_pcb_naked_f103 Member=Component RPDLDR RESISTANCE_CMS_0805
