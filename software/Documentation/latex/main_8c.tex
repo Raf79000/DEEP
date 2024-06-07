@@ -1,0 +1,167 @@
+\doxysection{src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{src/main.c@{src/main.c}}
+
+
+Default main function.  
+
+
+{\ttfamily \#include "{}stm32f1xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f1\+\_\+uart.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f1\+\_\+sys.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f1\+\_\+gpio.\+h"{}}\newline
+{\ttfamily \#include "{}macro\+\_\+types.\+h"{}}\newline
+{\ttfamily \#include "{}systick.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f1\+\_\+rtc.\+h"{}}\newline
+{\ttfamily \#include "{}time.\+h"{}}\newline
+{\ttfamily \#include "{}HC-\/\+SR04/\+HCSR04.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f1\+\_\+adc.\+h"{}}\newline
+{\ttfamily \#include "{}servo.\+h"{}}\newline
+{\ttfamily \#include "{}set\+\_\+servo.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structarea__struct}{area\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Structure for the sensor area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_af68839bed448fe67d7126bf2303cd173}\label{main_8c_af68839bed448fe67d7126bf2303cd173} 
+\#define {\bfseries PERIOD\+\_\+\+MEASURE}~100
+\item 
+\Hypertarget{main_8c_a8c6895f5ca226c422308e8a8f527c1e0}\label{main_8c_a8c6895f5ca226c422308e8a8f527c1e0} 
+\#define {\bfseries NB\+\_\+\+MEASURES}~10
+\item 
+\Hypertarget{main_8c_a9c93a02edf27ce1655795afd20472418}\label{main_8c_a9c93a02edf27ce1655795afd20472418} 
+\#define {\bfseries Left\+\_\+\+US}~30
+\item 
+\Hypertarget{main_8c_a997805aaec844b8fca3449a736a2da9b}\label{main_8c_a997805aaec844b8fca3449a736a2da9b} 
+\#define {\bfseries Middle\+\_\+\+US}~50
+\item 
+\Hypertarget{main_8c_ab2e22e09d6a0f6db1a512dd217e5b0a5}\label{main_8c_ab2e22e09d6a0f6db1a512dd217e5b0a5} 
+\#define {\bfseries Right\+\_\+\+US}~70
+\item 
+\Hypertarget{main_8c_a549d41dcf9444ed7d6df1da3c73e7d16}\label{main_8c_a549d41dcf9444ed7d6df1da3c73e7d16} 
+\#define {\bfseries MIN\+\_\+\+DISTANCE}~150
+\item 
+\Hypertarget{main_8c_a4b437afeae802bd871dd0f80a3e0a1ab}\label{main_8c_a4b437afeae802bd871dd0f80a3e0a1ab} 
+\#define {\bfseries ONE\+\_\+\+MEASURE\+\_\+\+DURATION}~130
+\item 
+\Hypertarget{main_8c_aa840a0ac3b87cf7c89b265e1912cbb5b}\label{main_8c_aa840a0ac3b87cf7c89b265e1912cbb5b} 
+\#define {\bfseries PERIOD\+\_\+\+US}~3\texorpdfstring{$\ast$}{*}ONE\+\_\+\+MEASURE\+\_\+\+DURATION
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2b}{HCSR04\+\_\+state\+\_\+e}} \{ \newline
+\mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2ba0cb1b2c6a7db1f1084886c98909a3f36}{INIT}}
+, \mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2ba936c4a5547a9360243178f726f6b2715}{FAIL}}
+, \mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2baeda7f6e43fb94aeced0664b3a00da62a}{LAUNCH\+\_\+\+MEASURE}}
+, \mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2ba439c688a4e9ed31638d5922a50680a8e}{RUN}}
+, \newline
+\mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2ba1d40588f5f83b656fb51ceb98bdf6639}{WAIT\+\_\+\+DURING\+\_\+\+MEASURE}}
+, \mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2ba01f8ebe02accb8bd8bf886d0694f064f}{WAIT\+\_\+\+BEFORE\+\_\+\+NEXT\+\_\+\+MEASURE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for the states of the HC-\/\+SR04 sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a95c827609106160381e4a9c1aba46463}{HCSR04\+\_\+state\+\_\+machine}} (struct \mbox{\hyperlink{structarea__struct}{area\+\_\+struct}} \texorpdfstring{$\ast$}{*}area)
+\begin{DoxyCompactList}\small\item\em State machine for the HC-\/\+SR04 (ultrasound) sensor. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_aa4bba522cda4313b5c2e1e894f36e08e}\label{main_8c_aa4bba522cda4313b5c2e1e894f36e08e} 
+void {\bfseries process\+\_\+ms} (void)
+\begin{DoxyCompactList}\small\item\em Process function called every millisecond. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_afadcb98f627fc723a7e7d74f424ca8ae}\label{main_8c_afadcb98f627fc723a7e7d74f424ca8ae} 
+void {\bfseries full\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Full initialization function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_add37168916e5aeecdf73b6eafc015e3c}\label{main_8c_add37168916e5aeecdf73b6eafc015e3c} 
+volatile int16\+\_\+t {\bfseries t} = 0
+\item 
+\Hypertarget{main_8c_a45be38847e665fa92a85c31c790e1b0d}\label{main_8c_a45be38847e665fa92a85c31c790e1b0d} 
+volatile RTC\+\_\+\+Time\+Type\+Def {\bfseries h}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Default main function. 
+
+\begin{DoxyAuthor}{Author}
+Cahier\+De\+Vac 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18-\/march-\/2024  
+\end{DoxyDate}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{main_8c_a07d6fb51821e349be1f128144f845e2b}\index{main.c@{main.c}!HCSR04\_state\_e@{HCSR04\_state\_e}}
+\index{HCSR04\_state\_e@{HCSR04\_state\_e}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HCSR04\_state\_e}{HCSR04\_state\_e}}
+{\footnotesize\ttfamily \label{main_8c_a07d6fb51821e349be1f128144f845e2b} 
+enum \mbox{\hyperlink{main_8c_a07d6fb51821e349be1f128144f845e2b}{HCSR04\+\_\+state\+\_\+e}}}
+
+
+
+Enum for the states of the HC-\/\+SR04 sensor. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INIT@{INIT}!main.c@{main.c}}\index{main.c@{main.c}!INIT@{INIT}}}\Hypertarget{main_8c_a07d6fb51821e349be1f128144f845e2ba0cb1b2c6a7db1f1084886c98909a3f36}\label{main_8c_a07d6fb51821e349be1f128144f845e2b} 
+INIT&Initial state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAIL@{FAIL}!main.c@{main.c}}\index{main.c@{main.c}!FAIL@{FAIL}}}\Hypertarget{main_8c_a07d6fb51821e349be1f128144f845e2ba936c4a5547a9360243178f726f6b2715}\label{main_8c_a07d6fb51821e349be1f128144f845e2b} 
+FAIL&Failure state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAUNCH\_MEASURE@{LAUNCH\_MEASURE}!main.c@{main.c}}\index{main.c@{main.c}!LAUNCH\_MEASURE@{LAUNCH\_MEASURE}}}\Hypertarget{main_8c_a07d6fb51821e349be1f128144f845e2baeda7f6e43fb94aeced0664b3a00da62a}\label{main_8c_a07d6fb51821e349be1f128144f845e2b} 
+LAUNCH\+\_\+\+MEASURE&Launch measurement state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUN@{RUN}!main.c@{main.c}}\index{main.c@{main.c}!RUN@{RUN}}}\Hypertarget{main_8c_a07d6fb51821e349be1f128144f845e2ba439c688a4e9ed31638d5922a50680a8e}\label{main_8c_a07d6fb51821e349be1f128144f845e2b} 
+RUN&Run state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAIT\_DURING\_MEASURE@{WAIT\_DURING\_MEASURE}!main.c@{main.c}}\index{main.c@{main.c}!WAIT\_DURING\_MEASURE@{WAIT\_DURING\_MEASURE}}}\Hypertarget{main_8c_a07d6fb51821e349be1f128144f845e2ba1d40588f5f83b656fb51ceb98bdf6639}\label{main_8c_a07d6fb51821e349be1f128144f845e2b} 
+WAIT\+\_\+\+DURING\+\_\+\+MEASURE&Wait during measurement state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAIT\_BEFORE\_NEXT\_MEASURE@{WAIT\_BEFORE\_NEXT\_MEASURE}!main.c@{main.c}}\index{main.c@{main.c}!WAIT\_BEFORE\_NEXT\_MEASURE@{WAIT\_BEFORE\_NEXT\_MEASURE}}}\Hypertarget{main_8c_a07d6fb51821e349be1f128144f845e2ba01f8ebe02accb8bd8bf886d0694f064f}\label{main_8c_a07d6fb51821e349be1f128144f845e2b} 
+WAIT\+\_\+\+BEFORE\+\_\+\+NEXT\+\_\+\+MEASURE&Wait before next measurement state \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a95c827609106160381e4a9c1aba46463}\index{main.c@{main.c}!HCSR04\_state\_machine@{HCSR04\_state\_machine}}
+\index{HCSR04\_state\_machine@{HCSR04\_state\_machine}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HCSR04\_state\_machine()}{HCSR04\_state\_machine()}}
+{\footnotesize\ttfamily \label{main_8c_a95c827609106160381e4a9c1aba46463} 
+void HCSR04\+\_\+state\+\_\+machine (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structarea__struct}{area\+\_\+struct}} \texorpdfstring{$\ast$}{*}}]{area}{}\end{DoxyParamCaption})}
+
+
+
+State machine for the HC-\/\+SR04 (ultrasound) sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em area} & Pointer to the area structure. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Main function. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
